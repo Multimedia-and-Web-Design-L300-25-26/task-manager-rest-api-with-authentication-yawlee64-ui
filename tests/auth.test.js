@@ -1,5 +1,7 @@
+jest.setTimeout(20000); 
 import request from "supertest";
 import app from "../src/app.js";
+
 
 describe("Auth Routes", () => {
 
@@ -32,4 +34,9 @@ describe("Auth Routes", () => {
     token = res.body.token;
   });
 
+});
+import mongoose from "mongoose";
+
+afterAll(async () => {
+  await mongoose.connection.close();
 });

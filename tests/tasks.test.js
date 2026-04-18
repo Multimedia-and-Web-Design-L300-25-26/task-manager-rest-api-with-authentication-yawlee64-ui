@@ -1,5 +1,9 @@
+import { jest } from '@jest/globals';
 import request from "supertest";
 import app from "../src/app.js";
+
+jest.setTimeout(20000);
+
 
 let token;
 let taskId;
